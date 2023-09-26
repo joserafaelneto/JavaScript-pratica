@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body{
+            background-color: yellow;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manipulação do DOM</h1>
+
+    <p>Nesta aula vou começar a praticar o DOM</p><!--índice 0-->
+
+    <p>Parágrafo de teste 1</p><!--índice 1-->
+
+    <p id="ident">Parágrafo de <strong>teste</strong> 2</p><!--índice 0 por causa do id-->
+
+    <p class="classe">Parágrafo de teste 3</p><!--índice 0 por causa do class-->
+
+    <p name ="nome">Parágrafo de teste 4</p><!--índice 0 por causa do name-->
+
+    <p class="classe2">Parágrafo de teste 5</p><!--índice 0-->
+
+    <h2>Os comandos abaixo são JavaScript</h2>
+
+    <script>
+        window.document.write(window.document.charset + '<br>'); //Esse comando mostra o set de caracteres usado
+
+        window.document.write(window.navigator.appName + '<br>'); //Esse comando mostra o nome do navegador que estamos usando
+
+        window.document.write(window.document.URL + '<br>'); //Esse comando mostra a URL que estamos acessando
+
+        //Por Marca/Tag
+        var p1 = window.document.getElementsByTagName('p')[1]; //Esse comando/método está pegando o 'parágrafo de teste 1'
+        window.document.write(p1.innerText + '<br>'); // Escreve o 'parágrafo de teste 1' na tela
+        p1.style.color = 'blue'; // Muda a cor do 'Parágrafo de teste 1' para azul
+
+        //Por ID
+        var p2 = window.document.getElementById('ident'); //Esse comando/método está pegando o 'Parágrafo de teste 2'
+        window.document.write(p2.innerHTML + '<br>'); // Escreve o 'parágrafo de teste 2' na tela
+        p2.style.color = 'red'; // Muda a cor do 'Parágrafo de teste 2' para vermelho
+
+        //Por Classe
+        var p3 = window.document.getElementsByClassName('classe')[0]; //Esse comando/método está pegando o 'parágrafo de teste 3'
+        window.document.write(p3.innerHTML + '<br>'); // Escreve o 'parágrafo de teste 3' na tela
+        p3.style.color = 'purple';  // Muda a cor do 'Parágrafo de teste 3' para roxo
+
+        //Por Nome
+        var p4 = window.document.getElementsByName('nome')[0]; //Esse comando/método está pegando o 'parágrafo de teste 4'
+        window.document.write(p4.innerText + '<br>'); // Escreve o 'parágrafo de teste 4' na tela
+        p4.style.color = 'orange'; // Muda a cor do 'Parágrafo de teste 4' para laranja
+
+        //Por Seletor
+        var p5 = window.document.querySelector('p.classe2'); //Esse comando/método está pegando o 'parágrafo de teste 5'
+        window.document.write(p5.innerHTML); // Escreve o 'parágrafo de teste 5' na tela
+        p5.style.color = 'green' // Muda a cor do 'Parágrafo de teste 5' para verde
+
+    </script>
+</body>
+</html>
