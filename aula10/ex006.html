@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Dom</title>
+    <style>
+        body{
+            font: normal 14pt arial;
+            background-color: yellow;
+        }
+        div#evento1{
+            width: 300px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            background-color: white;
+            margin: auto;
+            margin-bottom: 30px;
+        }
+        div#evento2{
+            width: 300px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            background-color: white;
+            margin: auto;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Eventos</h1>
+
+    <p>Mais abaixo podemos ver duas divs com o mesmo funcionamento, porém, o modo como os eventos foram programados são diferentes. Na primeira div disparamos os eventos através do HTML, ou seja, 'onclick', 'onmouseenter' e etc. Já na segunda div disparamos eventos através do JS, com o auxilio do 'addEventListener'.</p>
+
+    <h2>Exemplo de evento disparados por HTML </h2>
+
+    <div id="evento1" onmouseenter="entrar1()" onmouseout="sair1()" onclick="clicar1()">
+        Interaja...
+        HTML
+    </div>
+
+    <h2>Exemplos de eventos disparados por JavaScript</h2>
+
+    <div id="evento2">
+        Interaja...
+        JS
+    </div>
+
+    <script>
+        var evento1 = window.document.querySelector('div#evento1');
+
+        function entrar1(){
+            evento1.innerHTML = 'Entrou!';
+            evento1.style.background = 'lightblue';
+        }
+
+        function sair1(){
+            evento1.innerHTML = 'Saiu!';
+            evento1.style.background = 'red';
+        }
+
+        function clicar1(){
+            evento1.innerHTML = 'Clicou!';
+            evento1.style.background = 'lightgreen';
+        }
+
+        var evento2 = window.document.getElementById('evento2');
+        evento2.addEventListener('mouseenter', entrar2);
+        evento2.addEventListener('mouseout', sair2);
+        evento2.addEventListener('click', clicar2);
+
+        function entrar2(){
+            evento2.innerHTML = 'Entrou!';
+            evento2.style.background = 'lightblue'
+        }
+
+        function sair2(){
+            evento2.innerHTML = 'Saiu!';
+            evento2.style.background = 'red';
+        }
+
+        function clicar2(){
+            evento2.innerHTML = 'Clicou!';
+            evento2.style.background = 'lightgreen';
+        }
+
+    </script>
+    
+</body>
+</html>
