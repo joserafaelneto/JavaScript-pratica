@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+    <style>
+        body{
+            font: normal 14pt Arial;
+            background-color: yellow;
+        }
+
+        input{
+            font: normal 14pt Arial;
+            width: 100px;
+        }
+
+        div{
+            width: 600px;
+            height: 150px;
+            padding: 15px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    <p>Informe a velocidade do seu carro: <input type="number" name="vel" id="vel"> <input type="button" value="Checar..." onclick="checar()"> Km/h.</p>
+    <div id="res">Informações...</div>
+    
+    <script>
+        function checar(){
+            var campo_velocidade = window.document.getElementById('vel');
+            var velocidade = Number(campo_velocidade.value);
+            var informação = window.document.getElementById('res');
+            informação.innerHTML = `<p>A sua velocidade informada foi de <strong>${velocidade}</strong> Km/h, então você será...</p>`;
+            if(velocidade > 70){
+                informação.innerHTML += `<p>Será <strong>MULTADO</strong> por excesso de velocidade!</p>`;
+                informação.style.background = 'red';
+            }else{
+                informação.innerHTML += `<p>Você <strong>NÃO SERÁ MULTADO</strong> por excesso de velocidade!</p>`;
+                informação.style.background = 'lightgreen';
+            }
+            informação.innerHTML += `<p>Dirija com Atenção!</p>`;
+        }
+
+    </script>
+</body>
+</html>
